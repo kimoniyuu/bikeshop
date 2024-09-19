@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,3 +40,8 @@ Route::get('/category/edit/{id?}', [CategoryController::class, 'edit']);
 Route::post('/category/update', [CategoryController::class, 'update']);
 Route::post('/category/insert', [CategoryController::class, 'insert']);
 Route::get('/category/remove/{id?}', [CategoryController::class, 'remove']);
+
+Route::get('/cart/view', [CartController::class, 'viewCart']);
+Route::get('/cart/add/{id}', [CartController::class, 'addToCart']);
+Route::get('/cart/delete/{id}', [CartController::class, 'deleteCart']);
+Route::get('/cart/update/{id}/{qty}', [CartController::class, 'updateCart']);
